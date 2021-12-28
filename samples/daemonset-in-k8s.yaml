@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: sanlock-daemon
+  namespace: sanlock-system
+spec:
+  selector:
+    matchLabels:
+      name: sanlock-daemon
+  template:
+    metadata:
+      labels:
+        name: sanlock-daemon
+    spec:
+      containers:
+        - name: sanlock-daemon
+          image: carezkh/sanlock-daemon:v0.1.0
+          securityContext:
+            privileged: true
+          resources:
+            # TODO: set sanlock daemon QoS to Guaranteed
+            requests:
+              memory: 30Mi
+          volumeMounts:
+            - name: sanlock-run
+              mountPath: /run/sanlock
+            - name: sanlock-lib
+              mountPath: /var/lib/sanlock
+              mountPropagation: Bidirectional
+      volumes:
+          - name: sanlock-run
+            hostPath:
+              path: /run/sanlock
+          - name: sanlock-lib
+            hostPath:
+              path: /var/lib/sanlock
