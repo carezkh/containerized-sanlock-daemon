@@ -18,4 +18,4 @@ modprobe softdog
 
 ## Guide
 
-You can refer to the sample [daemonset-in-k8s.yaml](samples/daemonset-in-k8s.yaml) to see how to use the container image in kubernetes.
+You can refer to the sample [daemonset-in-k8s.yaml](samples/daemonset-in-k8s.yaml) to see how to use the container image in Kubernetes.
