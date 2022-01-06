@@ -1,6 +1,6 @@
-# Sanlock Daemon
+# Containerized Sanlock Daemon
 
-**Sanlock Daemon** can be used to build a container image that runs [sanlock](https://pagure.io/sanlock).
+**Containerized Sanlock Daemon** can be used to build a container image that runs [sanlock](https://pagure.io/sanlock).
 
 The image repository: [sanlock-daemon](https://hub.docker.com/repository/docker/carezkh/sanlock-daemon).
 
