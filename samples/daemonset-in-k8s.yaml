@@ -12,9 +12,10 @@ spec:
       labels:
         name: sanlock-daemon
     spec:
+      hostPID: true
       containers:
         - name: sanlock-daemon
-          image: carezkh/sanlock-daemon:v0.2.0
+          image: carezkh/sanlock-daemon:v0.3.0
           securityContext:
             privileged: true
           resources:
