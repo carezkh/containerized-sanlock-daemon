@@ -10,8 +10,8 @@ Sanlock can clear the process within a specified time. Otherwise, the watchdog d
 
 ```shell
 cat >> /etc/rc.d/rc.local <<EOF
-> /usr/sbin/modprobe softdog
-> EOF
+/usr/sbin/modprobe softdog
+EOF
 
 chmod +x /etc/rc.d/rc.local
 
