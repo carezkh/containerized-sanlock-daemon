@@ -9,11 +9,12 @@ The image repository: [sanlock-daemon](https://hub.docker.com/repository/docker/
 Sanlock can clear the process within a specified time. Otherwise, the watchdog device is required to reset the host. If you do not have a hardware watchdog, you can enable `softdog` in the following ways.
 
 ```shell
-cat >> /etc/rc.d/rc.local <<EOF
+cat >> /etc/rc.local <<EOF
+#!/bin/bash
 /usr/sbin/modprobe softdog
 EOF
 
-chmod +x /etc/rc.d/rc.local
+chmod +x /etc/rc.local
 
 modprobe softdog
 ```
